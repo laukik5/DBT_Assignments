@@ -1,0 +1,22 @@
+
+Q1. Which field of the Customers table is the primary key ?
+Answer:	Cnum is the primary key in customers table.
+
+Q2. What is the 4th column of the Customer table ?
+Answer:	4th Column is Rating int (4).
+
+Q3. What is another word for row ? column ?
+Answer:	Another word for row is:
+	a. record 
+	b.tuple 
+	c.entity
+	d.oppotunity .
+   	Another word for column is:
+	a. Attribute 
+	b.method .
+
+Q4. Why isn't it possible to see the first five rows of a table ?
+Answer : Because when we insert rows,the rows are stored in the server machine's 
+    	hard disk based on the available memory space, i.e in a random fashion.
+    	According to the ascending order of memory address. So it
+    	is not possible to see the first or last N rows of a table. 

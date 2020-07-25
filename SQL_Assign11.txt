@@ -1,0 +1,14 @@
+
+
+
+1) Write a query that uses a subquery to obtain all orders for the customer named Cisneros. Assume you do not know his customer number (cnum).
+Answer:	select onum,amt from orders,customers where cnum=(Select cnum from customers where cname='cisneros'); 
+
+2) Write a query that produces the names and ratings of all customers who have above-average orders.
+Answer:	select cname,rating from customers where cnum in (select cnum from orders where amt>(Select avg(amt) from orders ));
+
+3) Write a query that selects the total amount in orders for each salesperson for whom this total is greater than the amount of the largest order in the table.
+Answer:	select sum(amt) 'total' ,snum from orders group by snum having sum(Amt)>(select max(amt) from orders);
+
+
+

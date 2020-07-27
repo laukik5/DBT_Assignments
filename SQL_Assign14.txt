@@ -1,0 +1,26 @@
+
+
+
+1) Write a command that puts the following values, in their given order, into the
+   salespeople table: city – San Jose, name – Blanco, comm – NULL, cnum – 1100.
+Answer:	create table salespeople2
+   	as 
+   	select city,sname,comm  from salespeople;
+   	alter table salespeople2 add column cnum int;
+   	insert into salespeople2 (city,sname,cnum) values  ('san jose','Blanco',1100); 
+   	create table salespeople_copy
+   	as 
+   	select * from salespeople;
+   	drop table salespeople;
+   	rename table salespeople2 to salespeople;	
+
+
+2) Write a command that removes all orders from customer Clemens from the Orders table.
+Answer:	delete from orders where cnum in (select cnum from customers where cname='clemens');
+
+3) Write a command that increases the rating of all customers in Rome by 100.
+Answer:	update customers set rating=rating+100 where city='Rome';
+
+4) Salesperson Serres has left the company. Assign her customers to Motika.
+Answer:	update customers,orders set customers.snum = (Select snum from salespeople where sname='motika'),orders.snum = (Select snum from salespeople where sname='motika')
+	where customers.snum = (Select snum from salespeople where sname='serres') and  orders.snum = (Select snum from salespeople where sname='serres');

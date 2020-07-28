@@ -8,7 +8,7 @@ Answer:	create index in_on_od on orders(onum);
 Answer:	alter table orders add constraint u_on_od unique(onum);
 
 3) Create an index that would permit each salesperson to retrieve his or her orders grouped by date quickly.
-Answer:	create index i_sn_on on orders(snum);
+Answer:	create index i_sn_od on orders(snum);
 
 4) Let us assume that each salesperson is to have only one customer of a given rating, and that this is currently the case. Enter a command that enforces it.
 Answer:	 alter table customers add constraint u_sn_ra unique(snum,rating);

@@ -11,4 +11,4 @@ Answer:	alter table orders add constraint u_on_od unique(onum);
 Answer:	create index i_sn_on on orders(snum);
 
 4) Let us assume that each salesperson is to have only one customer of a given rating, and that this is currently the case. Enter a command that enforces it.
-Answer:	 alter table orders add constraint u_sn_ra unique(snum,rating);
+Answer:	 alter table customers add constraint u_sn_ra unique(snum,rating);
